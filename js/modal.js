@@ -12,6 +12,10 @@ const modal = () => {
   function closeModal() {
     if (modal) {
       modal.style.display = '';
+      // Очищаем форму при закрытии модального окна
+      if (window.clearForm) {
+        window.clearForm();
+      }
     }
   }
 

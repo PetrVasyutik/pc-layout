@@ -608,8 +608,13 @@ progress::-moz-progress-value {
     padding-right: 3rem;
 }
 
+.modal__input input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
 .modal__input:not(:last-child) {
-    margin-bottom: 1.6rem;
+    margin-bottom: 2.6rem;
 }
 
 .modal__elements {
@@ -632,6 +637,64 @@ progress::-moz-progress-value {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+/* Стили для ошибок валидации */
+.modal__input.error {
+  border: 2px solid #DF5950;
+  background-color: rgba(223, 89, 80, 0.1);
+}
+
+.modal__input.error input {
+  color: #DF5950;
+}
+
+.error-message {
+  color: #DF5950;
+  font-size: 1.2rem;
+  margin-top: -2.5rem;
+  margin-left: 3rem;
+  line-height: 140%;
+}
+
+/* Общее сообщение формы */
+.form-message {
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  line-height: 160%;
+  margin-bottom: 2rem;
+  text-align: center;
+  animation: slideDown 0.3s ease-out;
+}
+
+.form-message.success {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+  border: 1px solid #4CAF50;
+}
+
+.form-message.error {
+  background-color: rgba(223, 89, 80, 0.2);
+  color: #DF5950;
+  border: 1px solid #DF5950;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Стили для отключенной кнопки */
+.modal__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .active {
